@@ -1,2 +1,2 @@
 # DarkhorseAR : 
-Darkhorse AR by Pulkit Midha ( Unity SDE ) 
+Darkhorse AR by Pulkit Midha 
