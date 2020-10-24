@@ -348,9 +348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e8c22bbd7152548b79d89d6c343ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCard: {fileID: 2140815747}
-  PlayerCard2: {fileID: 1226001788}
-  PlayerCard3: {fileID: 1997386122}
+  PlayerCard: {fileID: 1576563034}
+  PlayerCard2: {fileID: 1818728850}
+  PlayerCard3: {fileID: 523679050}
 --- !u!1001 &426131165
 PrefabInstance:
   m_ObjectHideFlags: 0
