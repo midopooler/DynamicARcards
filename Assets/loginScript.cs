@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class loginScript : MonoBehaviour
 {
     public GameObject password;
-    public GameObject phoneNumber;
+    public GameObject email;
     public GameObject sendOtp;
     public GameObject errorMessage;
     public GameObject LoadingCircle;
@@ -18,7 +18,7 @@ public class loginScript : MonoBehaviour
 
     public Button sendOtpBtn;
 
-    private string PhoneNumber;
+    private string Email;
 
     public static string Password;
 
@@ -67,32 +67,28 @@ public class loginScript : MonoBehaviour
     private void ValidateSendotp()
     {
         Password = password.GetComponent<InputField>().text;
-        PhoneNumber = phoneNumber.GetComponent<InputField>().text;
+        Email = email.GetComponent<InputField>().text;
 
-        if (PhoneNumber == null || PhoneNumber == "")
+        if (Email == null || Email == "")
         {
-            showPhoneNumberError("Please enter a valid Phone Number");
+            showPhoneNumberError("Please enter a valid Email address");
         }
         if (Password == null || Password == "")
         {
-            showPhoneNumberError("Please enter a valid country code");
-        }
-        else if (PhoneNumber.Length < 7)
-        {
-            showPhoneNumberError("Phone number should be 10 digits long.");         //what should be the error message here?
+            showPhoneNumberError("Wrong password");
         }
         else
         {
             LoadingCircle.SetActive(true);
-            Debug.Log("the mobile number is " + Password + PhoneNumber);
-            StartCoroutine(CallSendOtp(PhoneNumber));
+            Debug.Log("the mobile number is " + Password + Email);
+            StartCoroutine(CallSendOtp(Email));
         }
     }
 
-    public IEnumerator CallSendOtp(string phoneNumber)
+    public IEnumerator CallSendOtp(string email)
     {
         string url = StaticVars.serverBaseUrl + "/v2/auth/sendOtp";
-        string bodyJsonString = "{\"data\":{ \"phoneNumber\" : \"" + phoneNumber + "\",\"countryCode\" : \"" + Password + "\"}}";
+        string bodyJsonString = "{\"data\":{ \"phoneNumber\" : \"" + email + "\",\"countryCode\" : \"" + Password + "\"}}";
 
         var www = new UnityWebRequest(url, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
@@ -113,8 +109,8 @@ public class loginScript : MonoBehaviour
                 SendOtpResponseData responseData = JsonUtility.FromJson<SendOtpResponseData>(www.downloadHandler.text);
                 if (responseData.status.code == "200")
                 {
-                    StaticValue.phoneNumber = phoneNumber;
-                    StaticValue.CountryCode = password;
+                   // StaticValue.Email = email;
+                   // StaticValue.Password = password;
 
                     SceneManager.LoadScene(2);
                 }
