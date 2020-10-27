@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   password: {fileID: 2077854565}
-  phoneNumber: {fileID: 1942434914}
+  email: {fileID: 1942434914}
   sendOtp: {fileID: 622680038}
   errorMessage: {fileID: 2123975613}
   LoadingCircle: {fileID: 1317959414}
