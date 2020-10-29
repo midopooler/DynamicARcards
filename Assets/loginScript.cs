@@ -80,7 +80,7 @@ public class loginScript : MonoBehaviour
         else
         {
             LoadingCircle.SetActive(true);
-            Debug.Log("the mobile number is " + Password + Email);
+            Debug.Log("the email is " + Password + Email);
             StartCoroutine(CallSendOtp(Email));
         }
     }
