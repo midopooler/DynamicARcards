@@ -87,15 +87,22 @@ public class loginScript : MonoBehaviour
 
     public IEnumerator CallSendOtp(string email)
     {
-        string url = StaticVars.serverBaseUrl + "/v2/auth/sendOtp";
-        string bodyJsonString = "{\"data\":{ \"phoneNumber\" : \"" + email + "\",\"countryCode\" : \"" + Password + "\"}}";
+        WWWForm form = new WWWForm();
+        form.AddField(Email, Password);
 
-        var www = new UnityWebRequest(url, "POST");
-        byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
-        www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
-        www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-        www.SetRequestHeader("Content-Type", "application/json");
+        string url = StaticVars.serverBaseUrl + "/api/auth";
+        //string bodyJsonString = "{\"data\":{ \"phoneNumber\" : \"" + email + "\",\"countryCode\" : \"" + Password + "\"}}";
 
+      //  var www = new UnityWebRequest(url, "POST");
+
+        UnityWebRequest www = UnityWebRequest.Post("https://api.thedarkhorse.io/api/auth", form);
+       // yield return www.SendWebRequest();
+       // var www = new UnityWebRequest(url, "POST");
+        // byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
+        // www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+        // www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        //  www.SetRequestHeader("Content-Type", "application/json");
+        //UnityWebRequest.SendWebRequest
         using (www)
         {
             yield return www.SendWebRequest();
@@ -103,29 +110,49 @@ public class loginScript : MonoBehaviour
             if (www.isNetworkError || www.isHttpError)
             {
                 showPhoneNumberError("Error connecting to server. Please check your internet connection or come back later.");
+                Debug.Log("Error connecting to server. Please check your internet connection or come back later.");
             }
             else
             {
                 SendOtpResponseData responseData = JsonUtility.FromJson<SendOtpResponseData>(www.downloadHandler.text);
                 if (responseData.status.code == "200")
                 {
-                   // StaticValue.Email = email;
-                   // StaticValue.Password = password;
-
+                    // StaticValue.Email = email;
+                    // StaticValue.Password = password;
+                    Debug.Log("hogya bro");
                     SceneManager.LoadScene(2);
                 }
                 else
                 {
-                    showPhoneNumberError("Error connecting to server: " + responseData.data.message);
+                    showPhoneNumberError("Error connecting to server: ");
                 }
             }
         }
 
     }
-    void Awake()
-    {
-        DontDestroyOnLoad(password);
-    }
+
+    //IEnumerator Upload()
+    //{
+    //    WWWForm form = new WWWForm();
+    //    form.AddField(Email, Password);
+
+    //    UnityWebRequest www = UnityWebRequest.Post("https://api.thedarkhorse.io/api/auth", form);
+    //   // yield return www.Send();
+    //   // var www = new UnityWebRequest(url, "POST");
+
+    //    if (www.isError)
+    //    {
+    //        Debug.Log(www.error);
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Form upload complete!");
+    //    }
+    //}
+    //void Awake()
+    //{
+    //    DontDestroyOnLoad(password);
+    //}
 
 
 }
