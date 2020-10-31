@@ -96,8 +96,9 @@ public class loginScript : MonoBehaviour
       //  var www = new UnityWebRequest(url, "POST");
 
         UnityWebRequest www = UnityWebRequest.Post("https://api.thedarkhorse.io/api/auth", form);
-       // yield return www.SendWebRequest();
-       // var www = new UnityWebRequest(url, "POST");
+       yield return www.SendWebRequest();
+        Debug.Log(www);
+        // var www = new UnityWebRequest(url, "POST");
         // byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
         // www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         // www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
@@ -105,7 +106,7 @@ public class loginScript : MonoBehaviour
         //UnityWebRequest.SendWebRequest
         using (www)
         {
-            yield return www.SendWebRequest();
+            // yield return www.SendWebRequest();
             LoadingCircle.SetActive(false);
             if (www.isNetworkError || www.isHttpError)
             {
@@ -125,6 +126,7 @@ public class loginScript : MonoBehaviour
                 else
                 {
                     showPhoneNumberError("Error connecting to server: ");
+                    Debug.Log("Error connecting to server: ");
                 }
             }
         }
