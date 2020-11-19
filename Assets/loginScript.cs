@@ -124,7 +124,7 @@ public class loginScript : MonoBehaviour
                 {
                     // StaticValue.Email = email;
                     // StaticValue.Password = password;
-                    Debug.Log("hogya bro");
+                    Debug.Log("response data successful");
                     SceneManager.LoadScene(2);
                 }
                 else
