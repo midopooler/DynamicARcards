@@ -72,13 +72,17 @@ public class loginScript : MonoBehaviour
        Password = password.GetComponent<InputField>().text;
         Email = email.GetComponent<InputField>().text;
 
-        if (Email == null || Email == "")
+        if (Email == null || Email == "" || !Email.Contains("@"))
         {
             showPhoneNumberError("Please enter a valid Email address");
         }
         if (Password == null || Password == "")
         {
             showPhoneNumberError("Wrong password");
+        }
+          if (Password.Length < 6)
+        {
+            showPhoneNumberError("Enter a password of atleast 6 digits");
         }
         else
         {
