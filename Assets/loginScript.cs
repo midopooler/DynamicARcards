@@ -16,6 +16,9 @@ public class loginScript : MonoBehaviour
     public GameObject LoadingCircle;
     //for displaying mobile number on canvas UI
 
+    //public InputField emailid;
+    //public InputField DHpassword;
+
     public Button sendOtpBtn;
 
     private string Email;
@@ -66,7 +69,7 @@ public class loginScript : MonoBehaviour
 
     private void ValidateSendotp()
     {
-        Password = password.GetComponent<InputField>().text;
+       Password = password.GetComponent<InputField>().text;
         Email = email.GetComponent<InputField>().text;
 
         if (Email == null || Email == "")
@@ -88,7 +91,8 @@ public class loginScript : MonoBehaviour
     public IEnumerator CallSendOtp(string email)
     {
         WWWForm form = new WWWForm();
-        form.AddField(Email, Password);
+        form.AddField("email", Email);
+        form.AddField("password", Password);
 
         string url = StaticVars.serverBaseUrl + "/api/auth";
         //string bodyJsonString = "{\"data\":{ \"phoneNumber\" : \"" + email + "\",\"countryCode\" : \"" + Password + "\"}}";
@@ -104,8 +108,8 @@ public class loginScript : MonoBehaviour
         // www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         //  www.SetRequestHeader("Content-Type", "application/json");
         //UnityWebRequest.SendWebRequest
-        using (www)
-        {
+        //using (www)
+        //{
             // yield return www.SendWebRequest();
             LoadingCircle.SetActive(false);
             if (www.isNetworkError || www.isHttpError)
@@ -129,7 +133,7 @@ public class loginScript : MonoBehaviour
                     Debug.Log("Error connecting to server: ");
                 }
             }
-        }
+       // }
 
     }
 
