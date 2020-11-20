@@ -103,7 +103,8 @@ public class loginScript : MonoBehaviour
 
       //  var www = new UnityWebRequest(url, "POST");
 
-        UnityWebRequest www = UnityWebRequest.Post("https://api.thedarkhorse.io/api/auth", form);
+        UnityWebRequest www = UnityWebRequest.Post(url, form);
+        Debug.Log(form);
        yield return www.SendWebRequest();
         Debug.Log(www);
         // var www = new UnityWebRequest(url, "POST");
@@ -114,7 +115,6 @@ public class loginScript : MonoBehaviour
         //UnityWebRequest.SendWebRequest
         //using (www)
         //{
-            // yield return www.SendWebRequest();
             LoadingCircle.SetActive(false);
             if (www.isNetworkError || www.isHttpError)
             {
