@@ -2,10 +2,95 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Networking;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Text;
+using System;
 
 public class login2 : MonoBehaviour
 {
+    public GameObject password;
+    public GameObject email;
+    public GameObject Login;
+    public GameObject errorMessage;
+    public GameObject LoadingCircle;
+
+    public Button Loginbutton;
+
+    private string Email; 
+
+    private string Password;
+
+    private Text errorMessageTxt;
+
+    private Color32 ErrorColor = new Color32(236, 17, 124, 255);
+
+    [Serializable]
+    public class SendResponseData
+    {
+        public string error;
+        public StatusResponseData status;
+        public DataResponseData data; 
+    }
+
+    [Serializable]
+    public class StatusResponseData
+    {
+        public string code;
+    }
+
+    [Serializable]
+    public class DataResponseData
+    {
+        public string message;
+    }
+
+    void showPhoneNumberError(string errorMsg)
+    {
+        errorMessageTxt = errorMessage.GetComponent<Text>();
+        {
+            errorMessageTxt.text = errorMsg;
+            errorMessageTxt.color = ErrorColor;
+        }
+    }
+
+    void Start()
+    {
+
+        Loginbutton = Login.GetComponent<Button>();
+        Loginbutton.onClick.AddListener(ValidateLogin);
+
+        //TODO: in tokened APIs check 403 case
+
+        doPost();
+    }
+
+    private void ValidateLogin()
+    {
+        Password = password.GetComponent<InputField>().text;
+        Email = email.GetComponent<InputField>().text;
+
+        if (Email == null || Email == "" || !Email.Contains("@"))
+        {
+            showPhoneNumberError("Please enter a valid Email address");
+        }
+        if (Password == null || Password == "")
+        {
+            showPhoneNumberError("Wrong password");
+        }
+        if (Password.Length < 6)
+        {
+            showPhoneNumberError("Enter a password of atleast 6 digits");
+        }
+        else
+        {
+            LoadingCircle.SetActive(true);
+            Debug.Log("the email is " + Password + Email);
+            //StartCoroutine(CallSendOtp(Email));
+        }
+    }
+
+
     public string url2 = "https://api.thedarkhorse.io/api/metrics/5f491cbd069bc2125f8b5d3f";
     Dictionary<string, string> headers = new Dictionary<string, string>();
     //With the @ before the string, we can split a long string in many lines without getting errors
@@ -14,10 +99,7 @@ public class login2 : MonoBehaviour
 		'password':'Password1234' 
 		
 	}";
-    private void Start()
-    {
-        doPost();
-    }
+   
     void doPost()
     {
         string URL = "https://api.thedarkhorse.io/api/auth";
@@ -69,6 +151,7 @@ public class login2 : MonoBehaviour
             else
             {
                 Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+                LoadingCircle.SetActive(false);
             }
 
 

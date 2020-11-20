@@ -500,6 +500,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ddc82f43eeb814f8cb0ca1dee52da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  password: {fileID: 2077854565}
+  email: {fileID: 1942434914}
+  Login: {fileID: 622680038}
+  errorMessage: {fileID: 2123975613}
+  LoadingCircle: {fileID: 1317959414}
+  Loginbutton: {fileID: 622680040}
+  url2: https://api.thedarkhorse.io/api/metrics/5f491cbd069bc2125f8b5d3f
 --- !u!1 &351330012
 GameObject:
   m_ObjectHideFlags: 0
