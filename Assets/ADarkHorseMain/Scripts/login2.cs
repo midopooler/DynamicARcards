@@ -13,13 +13,16 @@ public class login2 : MonoBehaviour
     public GameObject email;
     public GameObject Login;
     public GameObject errorMessage;
-    public GameObject LoadingCircle;
+    public GameObject LoadingCircle; 
+
 
     public Button Loginbutton;
 
     private string Email; 
 
     private string Password;
+
+    private string json;
 
     private Text errorMessageTxt;
 
@@ -45,7 +48,7 @@ public class login2 : MonoBehaviour
         public string message;
     }
 
-    void showPhoneNumberError(string errorMsg)
+    void showEmailError(string errorMsg)
     {
         errorMessageTxt = errorMessage.GetComponent<Text>();
         {
@@ -62,25 +65,26 @@ public class login2 : MonoBehaviour
 
         //TODO: in tokened APIs check 403 case
 
-        doPost();
+        
     }
 
     private void ValidateLogin()
     {
+        showEmailError(" ");
         Password = password.GetComponent<InputField>().text;
         Email = email.GetComponent<InputField>().text;
 
         if (Email == null || Email == "" || !Email.Contains("@"))
         {
-            showPhoneNumberError("Please enter a valid Email address");
+            showEmailError("Please enter a valid Email address");
         }
         if (Password == null || Password == "")
         {
-            showPhoneNumberError("Wrong password");
+            showEmailError("Wrong password");
         }
         if (Password.Length < 6)
         {
-            showPhoneNumberError("Enter a password of atleast 6 digits");
+            showEmailError("Enter a password of atleast 6 digits");
         }
         else
         {
@@ -88,20 +92,12 @@ public class login2 : MonoBehaviour
             Debug.Log("the email is " + Password + Email);
             //StartCoroutine(CallSendOtp(Email));
         }
-    }
+        credentials newcred = new credentials();
+        newcred.email = Email;
+        newcred.password = Password;
+        json = JsonUtility.ToJson(newcred);
+        Debug.Log(json);
 
-
-    public string url2 = "https://api.thedarkhorse.io/api/metrics/5f491cbd069bc2125f8b5d3f";
-    Dictionary<string, string> headers = new Dictionary<string, string>();
-    //With the @ before the string, we can split a long string in many lines without getting errors
-    private string json = @"{
-		'email':'ramiroarredondo@smcearthquakes.com', 
-		'password':'Password1234' 
-		
-	}";
-   
-    void doPost()
-    {
         string URL = "https://api.thedarkhorse.io/api/auth";
         string myAccessKey = "myAccessKey";
         string mySecretKey = "mySecretKey";
@@ -109,24 +105,32 @@ public class login2 : MonoBehaviour
         //Auth token for http request
         string accessToken;
         //Our custom Headers
-        
+
         //Encode the access and secret keys
         accessToken = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(myAccessKey + ":" + mySecretKey));
         //Add the custom headers
-        headers.Add("Authorization", "Basic " + accessToken); 
+        headers.Add("Authorization", "Basic " + accessToken);
         headers.Add("Content-Type", "application/json");
         headers.Add("AnotherHeader", "AnotherData");
         headers.Add("Content-Length", json.Length.ToString());
         //Replace single ' for double " 
-        //This is usefull if we have a big json object, is more easy to replace in another editor the double quote by singles one
-        json = json.Replace("'", "\"");
+        
+       
         //Encode the JSON string into a bytes
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(json);
         //Now we call a new WWW request
         WWW www = new WWW(URL, postData, headers);
         //And we start a new co routine in Unity and wait for the response.
-        StartCoroutine(WaitForRequest(www)); 
+        StartCoroutine(WaitForRequest(www));
     }
+
+
+    public string url2 = "https://api.thedarkhorse.io/api/metrics/5f491cbd069bc2125f8b5d3f";
+    Dictionary<string, string> headers = new Dictionary<string, string>();
+    //With the @ before the string, we can split a long string in many lines without getting errors
+    
+   
+   
     //Wait for the www Request
     IEnumerator WaitForRequest(WWW www)
     {
@@ -151,7 +155,8 @@ public class login2 : MonoBehaviour
             else
             {
                 Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
-                LoadingCircle.SetActive(false);
+                LoadingCircle.SetActive(false); 
+                 //load scene 
             }
 
 
@@ -160,6 +165,9 @@ public class login2 : MonoBehaviour
         {
             //Something goes wrong, print the error response
             Debug.Log(www.error);
+            showEmailError("Incorrect Email or Password");
+            LoadingCircle.SetActive(false);
+            headers.Clear();
         }
     }
 }
@@ -168,4 +176,9 @@ public class login2 : MonoBehaviour
 public class tokenOpener
 {
     public string token;
+} 
+public class credentials
+{
+    public string email;
+    public string password;
 }
