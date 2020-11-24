@@ -505,8 +505,9 @@ MonoBehaviour:
   Login: {fileID: 622680038}
   errorMessage: {fileID: 2123975613}
   LoadingCircle: {fileID: 1317959414}
+  StatsJson: 
   Loginbutton: {fileID: 622680040}
-  url2: https://api.thedarkhorse.io/api/metrics/5f491cbd069bc2125f8b5d3f
+  url2: https://api.thedarkhorse.io/api/auth
 --- !u!1 &351330012
 GameObject:
   m_ObjectHideFlags: 0
