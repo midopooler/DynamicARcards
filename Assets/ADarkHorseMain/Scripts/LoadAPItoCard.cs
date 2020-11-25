@@ -97,8 +97,24 @@ public class LoadAPItoCard : MonoBehaviour
     {
        UnityWebRequest www = UnityWebRequestTexture.GetTexture(AvatarURL);
         UnityWebRequest www1 = UnityWebRequestTexture.GetTexture(clubLogoURL);
-        yield return www.SendWebRequest();
-        yield return www1.SendWebRequest();
+
+        var uwr = www.SendWebRequest();
+        var uwr1 = www1.SendWebRequest();
+        if (!uwr.isDone)
+        {
+            profilepic.color = new Color(profilepic.color.r, profilepic.color.g, profilepic.color.b,0);
+        }
+
+        if (!uwr1.isDone)
+        {
+            clubLogo.color = new Color(clubLogo.color.r, clubLogo.color.g, clubLogo.color.b, 0);
+        }
+
+        yield return uwr; 
+
+        
+        yield return uwr1; 
+       
 
 
         if (www1.isNetworkError || www1.isHttpError)
@@ -107,7 +123,7 @@ public class LoadAPItoCard : MonoBehaviour
             
         } 
 
-      else if(www.isNetworkError || www.isHttpError)
+        else if(www.isNetworkError || www.isHttpError)
         {
             Debug.Log(www.error);
         }
@@ -115,9 +131,11 @@ public class LoadAPItoCard : MonoBehaviour
         {   
             Texture2D myTexture = ((DownloadHandlerTexture)www1.downloadHandler).texture;
             clubLogo.sprite = Sprite.Create(myTexture, new Rect(0, 0, myTexture.width, myTexture.height), Vector2.one / 2);
+            clubLogo.color = new Color(clubLogo.color.r, clubLogo.color.g, clubLogo.color.b, 100);
 
             Texture2D myTexture1 = ((DownloadHandlerTexture)www.downloadHandler).texture;
             profilepic.sprite = Sprite.Create(myTexture1, new Rect(0, 0, myTexture1.width, myTexture1.height), Vector2.one / 2);
+            profilepic.color = new Color(profilepic.color.r, profilepic.color.g, profilepic.color.b, 100);
         }
     }
 }

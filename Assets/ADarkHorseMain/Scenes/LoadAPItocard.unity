@@ -123,18 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &108890508 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5937711466905280141, guid: 3fca992c1a6ab184b821e91c663f46ae,
-    type: 3}
-  m_PrefabInstance: {fileID: 5937711467854966804}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509302501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef725a046db8c345825bd6c9fe991ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &153818563
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 108890508}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadAPItoCard, Assembly-CSharp
         m_MethodName: button2
         m_Mode: 1
@@ -547,7 +535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 108890508}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadAPItoCard, Assembly-CSharp
         m_MethodName: button1
         m_Mode: 1
@@ -1088,5 +1076,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5937711466905280141, guid: 3fca992c1a6ab184b821e91c663f46ae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fca992c1a6ab184b821e91c663f46ae, type: 3}
