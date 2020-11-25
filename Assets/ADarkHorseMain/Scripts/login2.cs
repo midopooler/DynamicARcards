@@ -13,8 +13,9 @@ public class login2 : MonoBehaviour
     public GameObject email;
     public GameObject Login;
     public GameObject errorMessage;
-    public GameObject LoadingCircle; 
+    public GameObject LoadingCircle;
 
+    public string StatsJson;
 
     public Button Loginbutton;
 
@@ -27,6 +28,7 @@ public class login2 : MonoBehaviour
     private Text errorMessageTxt;
 
     private Color32 ErrorColor = new Color32(236, 17, 124, 255);
+    public string url2 = "https://api.thedarkhorse.io/api/auth";
 
     [Serializable]
     public class SendResponseData
@@ -96,7 +98,7 @@ public class login2 : MonoBehaviour
         newcred.email = Email;
         newcred.password = Password;
         json = JsonUtility.ToJson(newcred);
-        Debug.Log(json);
+        Debug.Log(json); 
 
         string URL = "https://api.thedarkhorse.io/api/auth";
         string myAccessKey = "myAccessKey";
@@ -125,7 +127,8 @@ public class login2 : MonoBehaviour
     }
 
 
-    public string url2 = "https://api.thedarkhorse.io/api/metrics/5f491cbd069bc2125f8b5d3f";
+   
+   
     Dictionary<string, string> headers = new Dictionary<string, string>();
     //With the @ before the string, we can split a long string in many lines without getting errors
     
@@ -141,10 +144,13 @@ public class login2 : MonoBehaviour
             Debug.Log(www.text);
             tokenOpener tokenval = JsonUtility.FromJson<tokenOpener>(www.text);  // This line parses the whole JSON (token)
             Debug.Log(tokenval.token);
-            headers.Add("x-auth-token", tokenval.token);  //5f491cbd069bc2125f8b5d3f << userID 
+            headers.Add("x-auth-token", tokenval.token);  //5f491cbd069bc2125f8b5d3f << userID  
+          //  SceneManager.LoadScene(1);
 
           
             UnityWebRequest webRequest = UnityWebRequest.Get(url2);
+            Debug.Log("API hi");
+            Debug.Log(url2);
             webRequest.SetRequestHeader("x-auth-token", tokenval.token);
 
             yield return webRequest.SendWebRequest();
@@ -155,7 +161,9 @@ public class login2 : MonoBehaviour
             else
             {
                 Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+                StatsJson = webRequest.downloadHandler.text;
                 LoadingCircle.SetActive(false); 
+                
                  //load scene 
             }
 
