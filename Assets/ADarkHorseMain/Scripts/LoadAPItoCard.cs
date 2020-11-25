@@ -8,7 +8,8 @@ using TMPro;
 
 public class LoadAPItoCard : MonoBehaviour
 {
-    public string gitAPIurl;  //github testing API 
+    public string gitAPIurlMiles;
+    public string gitAPIurlPlayer2;  //github testing API 
     public string playerData;
     public string FirstName;
     public string LastName;
@@ -23,15 +24,29 @@ public class LoadAPItoCard : MonoBehaviour
     public TextMeshProUGUI playerNumber;
     public TextMeshProUGUI PlayerName;
     public TextMeshProUGUI GoalsScored;
-    public TextMeshProUGUI place; 
+    public TextMeshProUGUI place;
+
+    public string mainURL;
     
   
 
     void Start()
     {
+
+        mainURL = gitAPIurlMiles;
+        LoadAPI();// LoadAPI();
+    }
+    public void button1()
+    {
+        mainURL = gitAPIurlMiles;
+        LoadAPI();
+    } 
+
+    public void button2()
+    {
+        mainURL = gitAPIurlPlayer2;
         LoadAPI();
     }
-
     public void LoadAPI()
     {
 
@@ -41,7 +56,7 @@ public class LoadAPItoCard : MonoBehaviour
 
     IEnumerator Getplayerdata()
     {
-        UnityWebRequest webRequest = UnityWebRequest.Get(gitAPIurl);
+        UnityWebRequest webRequest = UnityWebRequest.Get(mainURL);
         yield return webRequest.SendWebRequest();
 
         if (webRequest.isNetworkError)
