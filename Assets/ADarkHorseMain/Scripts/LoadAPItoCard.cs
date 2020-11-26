@@ -8,7 +8,7 @@ using TMPro;
 
 public class LoadAPItoCard : MonoBehaviour
 {
-    public string gitAPIurlMiles;
+    public string gitAPIurlMiles = "https://raw.githubusercontent.com/dracielisawal/jsontest/master/statsJson";
     public string gitAPIurlPlayer2;  //github testing API 
     public string playerData;
     public string FirstName;
@@ -169,8 +169,3 @@ public class club
     public string name;
     public string logo;
 }
-
-
-
-
-
