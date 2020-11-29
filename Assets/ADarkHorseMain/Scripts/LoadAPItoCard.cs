@@ -27,6 +27,8 @@ public class LoadAPItoCard : MonoBehaviour
     public TextMeshProUGUI place;
 
     public string mainURL;
+
+    public static string VideoURL;
     
   
 
@@ -85,6 +87,7 @@ public class LoadAPItoCard : MonoBehaviour
             place.text = data.city +","+ data.state;
             playerNumber.text = "#"+data.specifics.number.ToString();
             clubLogoURL = data.specifics.club.logo;
+            VideoURL = data.specifics.matchHighlight[0];
             Debug.Log(clubLogoURL);
 
 
@@ -95,6 +98,7 @@ public class LoadAPItoCard : MonoBehaviour
     }
     IEnumerator GetTexture()
     {
+
        UnityWebRequest www = UnityWebRequestTexture.GetTexture(AvatarURL);
         UnityWebRequest www1 = UnityWebRequestTexture.GetTexture(clubLogoURL);
 
@@ -136,6 +140,19 @@ public class LoadAPItoCard : MonoBehaviour
             Texture2D myTexture1 = ((DownloadHandlerTexture)www.downloadHandler).texture;
             profilepic.sprite = Sprite.Create(myTexture1, new Rect(0, 0, myTexture1.width, myTexture1.height), Vector2.one / 2);
             profilepic.color = new Color(profilepic.color.r, profilepic.color.g, profilepic.color.b, 100);
+
+            //VideoPlayerBelow
+           
+              var vp = gameObject.AddComponent<UnityEngine.Video.VideoPlayer>();
+        vp.url = VideoURL;
+            Debug.Log(VideoURL);
+
+        vp.isLooping = true;
+        vp.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
+        vp.targetMaterialRenderer = GetComponent<Renderer>();
+        vp.targetMaterialProperty = "_MainTex";
+
+        vp.Play();
         }
     }
 }
@@ -160,6 +177,7 @@ public class specifics
     public int number;
     public int position;
     public club club;
+    public List<string> matchHighlight;
     
 } 
 [Serializable]
