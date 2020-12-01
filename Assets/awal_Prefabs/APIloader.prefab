@@ -384,10 +384,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5937711466905280140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ef725a046db8c345825bd6c9fe991ce, type: 3}
+  m_Script: {fileID: 11500000, guid: f3b4c026c36f02b478f3fbc77959c2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gitAPIurl: https://raw.githubusercontent.com/dracielisawal/jsontest/master/statsJson
+  gitAPIurlMiles: https://raw.githubusercontent.com/dracielisawal/jsontest/master/statsJson
+  gitAPIurlPlayer2: 
+  gitAPIurlPlayer3: 
   playerData: 
   FirstName: 
   LastName: 
@@ -395,12 +397,13 @@ MonoBehaviour:
   Goals: 0
   AvatarURL: 
   clubLogoURL: 
-  profilepic: {fileID: 5937711466633969576}
-  clubLogo: {fileID: 5937711468245715584}
-  playerNumber: {fileID: 5937711468302311244}
-  PlayerName: {fileID: 5937711466618343253}
-  GoalsScored: {fileID: 5937711467362428294}
-  place: {fileID: 5937711466364427571}
+  profilepic: {fileID: 0}
+  clubLogo: {fileID: 0}
+  playerNumber: {fileID: 0}
+  PlayerName: {fileID: 0}
+  GoalsScored: {fileID: 0}
+  place: {fileID: 0}
+  mainURL: 
 --- !u!1 &5937711467342178805
 GameObject:
   m_ObjectHideFlags: 0

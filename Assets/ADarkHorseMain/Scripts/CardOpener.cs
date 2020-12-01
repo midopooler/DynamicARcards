@@ -6,16 +6,18 @@ public class CardOpener : MonoBehaviour
 {
     public GameObject playerCard;
     GameObject selectedPlayer;
+    public string playerID;
     void Start()
     {
+        playerCard = this.gameObject.GetComponentInChildren<LoadAPItoCard>().gameObject;
         playerCard.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {  
-        if(selectedPlayer != null)
-        playerCard.transform.position = Camera.main.WorldToScreenPoint(selectedPlayer.transform.position + new Vector3(0, 1.5f, 0));
+        if(playerCard.activeSelf == true)
+        playerCard.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position + new Vector3(0, 1.5f, 0));
     
         if (Input.GetMouseButtonDown(0)) // left click or touch, works for both 
         {
@@ -24,17 +26,17 @@ public class CardOpener : MonoBehaviour
             RaycastHit hit; //hit information 
             if (Physics.Raycast(ray, out hit)) //if raycast hit : 
             {
-                if (hit.transform.CompareTag("Player"))  //compares the tag of the hit with the "Player Tag"
+                if (hit.transform.gameObject == this.gameObject)  //compares the tag of the hit with the "Player Tag"
                 {
                     if (!playerCard.gameObject.activeSelf)
                     {
-                        selectedPlayer = hit.transform.gameObject;
+                        
                         playerCard.SetActive(true);
                     }
                     else
                     {
                         playerCard.SetActive(false);
-                        selectedPlayer = null;
+                        
                     }
                 }
             }
