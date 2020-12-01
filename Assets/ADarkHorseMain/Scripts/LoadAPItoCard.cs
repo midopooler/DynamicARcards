@@ -10,6 +10,7 @@ public class LoadAPItoCard : MonoBehaviour
 {
     public string gitAPIurlMiles = "https://raw.githubusercontent.com/dracielisawal/jsontest/master/statsJson";
     public string gitAPIurlPlayer2;  //github testing API 
+    public string gitAPIurlPlayer3;
     public string playerData;
     public string FirstName;
     public string LastName;
@@ -35,8 +36,8 @@ public class LoadAPItoCard : MonoBehaviour
     void Start()
     {
 
-        mainURL = gitAPIurlMiles;
-        LoadAPI();// LoadAPI();
+        //mainURL = gitAPIurlMiles;
+        //LoadAPI();// LoadAPI();
     }
     public void button1()
     {
@@ -47,6 +48,10 @@ public class LoadAPItoCard : MonoBehaviour
     public void button2()
     {
         mainURL = gitAPIurlPlayer2;
+        LoadAPI();
+    }public void button3()
+    {
+        mainURL = gitAPIurlPlayer3;
         LoadAPI();
     }
     public void LoadAPI()
@@ -81,13 +86,15 @@ public class LoadAPItoCard : MonoBehaviour
             Debug.Log(Number);
             Debug.Log(Goals);
             AvatarURL = data.avatar;
+            Debug.Log(AvatarURL);
+            Debug.Log(clubLogoURL);
            
             PlayerName.text = FirstName + " " + LastName;
             GoalsScored.text = "Goals Scored : "+ Goals.ToString();
-            place.text = data.city +","+ data.state;
+            place.text = data.specifics.position;
             playerNumber.text = "#"+data.specifics.number.ToString();
             clubLogoURL = data.specifics.club.logo;
-            VideoURL = data.specifics.matchHighlight[0];
+           // VideoURL = data.specifics.matchHighlight[0];
             Debug.Log(clubLogoURL);
 
 
@@ -175,7 +182,7 @@ public class specifics
    
     public int goals;
     public int number;
-    public int position;
+    public string position;
     public club club;
     public List<string> matchHighlight;
     

@@ -28,7 +28,7 @@ public class login2 : MonoBehaviour
     private Text errorMessageTxt;
 
     private Color32 ErrorColor = new Color32(236, 17, 124, 255);
-    public string url2 = "https://api.thedarkhorse.io/api/auth";
+    private string url2 = "https://api.thedarkhorse.io/api/users/5f491b72069bc2125f8b5d35";
 
     [Serializable]
     public class SendResponseData
