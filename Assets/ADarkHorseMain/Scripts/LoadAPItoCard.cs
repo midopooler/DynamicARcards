@@ -8,9 +8,7 @@ using TMPro;
 
 public class LoadAPItoCard : MonoBehaviour
 {
-    public string gitAPIurlMiles = "https://raw.githubusercontent.com/dracielisawal/jsontest/master/statsJson";
-    public string gitAPIurlPlayer2;  //github testing API 
-    public string gitAPIurlPlayer3;
+    public string userID;
     public string playerData;
     public string FirstName;
     public string LastName;
@@ -35,25 +33,11 @@ public class LoadAPItoCard : MonoBehaviour
 
     void Start()
     {
-
-        //mainURL = gitAPIurlMiles;
-        //LoadAPI();// LoadAPI();
-    }
-    public void button1()
-    {
-        mainURL = gitAPIurlMiles;
-        LoadAPI();
-    } 
-
-    public void button2()
-    {
-        mainURL = gitAPIurlPlayer2;
-        LoadAPI();
-    }public void button3()
-    {
-        mainURL = gitAPIurlPlayer3;
+        mainURL = "https://api.thedarkhorse.io/api/users/" + userID;
+        
         LoadAPI();
     }
+   
     public void LoadAPI()
     {
 

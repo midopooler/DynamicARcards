@@ -10,7 +10,7 @@ public class CardOpener : MonoBehaviour
     void Start()
     {
         playerCard = this.gameObject.GetComponentInChildren<LoadAPItoCard>().gameObject;
-        playerCard.SetActive(false);
+      //  playerCard.SetActive(false);
     }
 
     // Update is called once per frame
