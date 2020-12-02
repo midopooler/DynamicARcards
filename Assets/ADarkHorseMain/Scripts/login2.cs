@@ -29,6 +29,7 @@ public class login2 : MonoBehaviour
 
     private Color32 ErrorColor = new Color32(236, 17, 124, 255);
     private string url2 = "https://api.thedarkhorse.io/api/users/5f491b72069bc2125f8b5d35";
+    public static string tokenfornext;
 
     [Serializable]
     public class SendResponseData
@@ -144,8 +145,8 @@ public class login2 : MonoBehaviour
             Debug.Log(www.text);
             tokenOpener tokenval = JsonUtility.FromJson<tokenOpener>(www.text);  // This line parses the whole JSON (token)
             Debug.Log(tokenval.token);
-            headers.Add("x-auth-token", tokenval.token);  //5f491cbd069bc2125f8b5d3f << userID  
-          
+            // headers.Add("x-auth-token", tokenval.token);  //5f491cbd069bc2125f8b5d3f << userID  
+            tokenfornext = tokenval.token;
           
             UnityWebRequest webRequest = UnityWebRequest.Get(url2);
             Debug.Log("API hi");
@@ -161,10 +162,10 @@ public class login2 : MonoBehaviour
             {
                 Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
                 StatsJson = webRequest.downloadHandler.text;
-                LoadingCircle.SetActive(false);
-
-                SceneManager.LoadScene(1);
-                //load scene 
+                LoadingCircle.SetActive(false); 
+                
+                   SceneManager.LoadScene(1);
+//load scene 
             }
 
 

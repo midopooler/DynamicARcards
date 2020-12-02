@@ -42,12 +42,14 @@ public class LoadAPItoCard : MonoBehaviour
     {
 
         StartCoroutine(Getplayerdata());
+        Dictionary<string, string> headers = new Dictionary<string, string>();
 
     }
 
     IEnumerator Getplayerdata()
     {
         UnityWebRequest webRequest = UnityWebRequest.Get(mainURL);
+        webRequest.SetRequestHeader("x-auth-token", login2.tokenfornext);
         yield return webRequest.SendWebRequest();
 
         if (webRequest.isNetworkError)
