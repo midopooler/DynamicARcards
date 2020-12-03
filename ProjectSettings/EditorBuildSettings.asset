@@ -131,6 +131,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ADarkHorseMain/Scenes/openPlayerCard.unity
     guid: 6a8ddf61a75d8934aa8d79ae44d5a468
+  - enabled: 1
+    path: Assets/ADarkHorseMain/Scenes/login.unity
+    guid: c71de6c24ea91e046a556dc97886f30a
+  - enabled: 1
+    path: Assets/ADarkHorseMain/Scenes/PlayARcard.unity
+    guid: bb872291a4f03f844bd1fe0c446cd61c
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: f8ce26fe3bc69499b9be4b2378e97a94,
       type: 2}

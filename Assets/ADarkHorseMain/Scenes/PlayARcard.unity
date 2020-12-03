@@ -588,8 +588,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Stat '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3720cfb234ebc443a16956f06ef4730, type: 2}
+  m_sharedMaterial: {fileID: -2904889702457333836, guid: c3720cfb234ebc443a16956f06ef4730,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -880,8 +881,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Stat '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3720cfb234ebc443a16956f06ef4730, type: 2}
+  m_sharedMaterial: {fileID: -2904889702457333836, guid: c3720cfb234ebc443a16956f06ef4730,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2108,7 +2110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b4c026c36f02b478f3fbc77959c2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userID: 
+  userID: 5f491b72069bc2125f8b5d35
   playerData: 
   FirstName: 
   LastName: 
@@ -2302,8 +2304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 771, y: -356}
-  m_SizeDelta: {x: 786.05, y: 95.3}
+  m_AnchoredPosition: {x: -113.59994, y: -227}
+  m_SizeDelta: {x: 570.1397, y: 95.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864920359
 MonoBehaviour:
@@ -2327,8 +2329,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Stat '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3720cfb234ebc443a16956f06ef4730, type: 2}
+  m_sharedMaterial: {fileID: -2904889702457333836, guid: c3720cfb234ebc443a16956f06ef4730,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2461,8 +2464,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Stat '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3720cfb234ebc443a16956f06ef4730, type: 2}
+  m_sharedMaterial: {fileID: -2904889702457333836, guid: c3720cfb234ebc443a16956f06ef4730,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
