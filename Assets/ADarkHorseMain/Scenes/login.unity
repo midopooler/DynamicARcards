@@ -507,7 +507,6 @@ MonoBehaviour:
   LoadingCircle: {fileID: 1317959414}
   StatsJson: 
   Loginbutton: {fileID: 622680040}
-  url2: https://api.thedarkhorse.io/api/users/5f56a83bc0043516f8becb4a
 --- !u!1 &351330012
 GameObject:
   m_ObjectHideFlags: 0

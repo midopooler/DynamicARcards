@@ -19,9 +19,5 @@ public class video : MonoBehaviour
         vp.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

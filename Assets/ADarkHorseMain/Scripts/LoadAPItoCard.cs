@@ -20,6 +20,8 @@ public class LoadAPItoCard : MonoBehaviour
     public Image profilepic;
     public Image clubLogo;
 
+    public RawImage HighlightVideo;
+
     public TextMeshProUGUI playerNumber;
     public TextMeshProUGUI PlayerName;
     public TextMeshProUGUI GoalsScored;
@@ -27,7 +29,7 @@ public class LoadAPItoCard : MonoBehaviour
 
     public string mainURL;
 
-    public static string VideoURL;
+    public static string VideoURL = "https://darkhorse-static-data.s3-us-west-2.amazonaws.com/g4bwu8kgo1cjx1_videoplayback.mp4";
     
   
 
@@ -136,13 +138,13 @@ public class LoadAPItoCard : MonoBehaviour
 
             //VideoPlayerBelow
            
-              var vp = gameObject.AddComponent<UnityEngine.Video.VideoPlayer>();
+              var vp = HighlightVideo.gameObject.AddComponent<UnityEngine.Video.VideoPlayer>();
         vp.url = VideoURL;
             Debug.Log(VideoURL);
 
         vp.isLooping = true;
         vp.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
-        vp.targetMaterialRenderer = GetComponent<Renderer>();
+          //  vp.targetTexture. = HighlightVideo.texture;
         vp.targetMaterialProperty = "_MainTex";
 
         vp.Play();
