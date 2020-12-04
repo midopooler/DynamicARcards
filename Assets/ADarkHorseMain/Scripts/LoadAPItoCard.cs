@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Video;
 
 public class LoadAPItoCard : MonoBehaviour
 {
@@ -18,9 +19,10 @@ public class LoadAPItoCard : MonoBehaviour
     public string clubLogoURL;
 
     public Image profilepic;
-    public Image clubLogo;
+    public Image clubLogo; 
 
     public RawImage HighlightVideo;
+    public VideoPlayer highvidplaya;
 
     public TextMeshProUGUI playerNumber;
     public TextMeshProUGUI PlayerName;
@@ -138,13 +140,13 @@ public class LoadAPItoCard : MonoBehaviour
 
             //VideoPlayerBelow
            
-              var vp = HighlightVideo.gameObject.AddComponent<UnityEngine.Video.VideoPlayer>();
-        vp.url = VideoURL;
+              var vp = HighlightVideo.gameObject.GetComponent<VideoPlayer>();
+             vp.url = VideoURL;
             Debug.Log(VideoURL);
 
         vp.isLooping = true;
-        vp.renderMode = UnityEngine.Video.VideoRenderMode.MaterialOverride;
-          //  vp.targetTexture. = HighlightVideo.texture;
+            vp.renderMode = VideoRenderMode.RenderTexture;
+          //vp.targetTexture = HighlightVideo.texture;
         vp.targetMaterialProperty = "_MainTex";
 
         vp.Play();
