@@ -13,10 +13,14 @@ public class LoadAPItoCard : MonoBehaviour
     public string playerData;
     public string FirstName;
     public string LastName;
+    public string CoachFirstName;
+    public string CoachLastName;
     public int Number;
     public int Goals;
+    public int Assits;
     public string AvatarURL;
     public string clubLogoURL;
+    public int sprint;
 
     public Image profilepic;
     public Image clubLogo; 
@@ -24,10 +28,13 @@ public class LoadAPItoCard : MonoBehaviour
     public RawImage HighlightVideo;
     public VideoPlayer highvidplaya;
 
-    public TextMeshProUGUI playerNumber;
+    public TextMeshProUGUI playerNumber; 
     public TextMeshProUGUI PlayerName;
+    public TextMeshProUGUI  CoachName;
     public TextMeshProUGUI GoalsScored;
+    public TextMeshProUGUI AssitsScored;
     public TextMeshProUGUI place;
+    public TextMeshProUGUI sprints;
 
     public string mainURL;
 
@@ -68,11 +75,15 @@ public class LoadAPItoCard : MonoBehaviour
 
             PlayerData data = JsonUtility.FromJson<PlayerData>(playerData); 
           
-            FirstName = data.firstname;
+            FirstName = data.firstname;                         //playername
             LastName = data.lastname;
+            CoachFirstName = data.specifics.team.coach.firstname;  //coachname
+            CoachLastName = data.specifics.team.coach.lastname;
             Debug.Log(data.firstname + data.lastname);
             Number = data.specifics.number;
             Goals = data.specifics.goals;
+            sprint = data.specifics.sprintPerGame;
+            Assits = data.specifics.assists;
             Debug.Log(Number);
             Debug.Log(Goals);
             AvatarURL = data.avatar;
@@ -80,8 +91,12 @@ public class LoadAPItoCard : MonoBehaviour
             Debug.Log(clubLogoURL);
            
             PlayerName.text = FirstName + " " + LastName;
+            CoachName.text = "Coach Name :- " + CoachFirstName + " " + CoachLastName;
+            Debug.Log("Coach Name :- " + CoachFirstName + " " + CoachLastName);
             GoalsScored.text = "Goals Scored : "+ Goals.ToString();
+            AssitsScored.text = "Assits : " + Assits.ToString();
             place.text = data.specifics.position;
+            sprints.text = "Sprints per game : " + sprint.ToString();
             playerNumber.text = "#"+data.specifics.number.ToString();
             clubLogoURL = data.specifics.club.logo;
            // VideoURL = data.specifics.matchHighlight[0];
@@ -174,13 +189,29 @@ public class specifics
     public int number;
     public string position;
     public club club;
-    public List<string> matchHighlight;
-    
+    public List<string> matchHighlight; 
+    public int sprintPerGame;
+    public int assists;
+    public team team;
 } 
-[Serializable]
 
+[Serializable]
 public class club
 {
     public string name;
     public string logo;
+}
+
+
+[Serializable]
+public class team
+{
+    public coach coach;
+}
+
+[Serializable]
+public class coach
+{
+    public string firstname;
+    public string lastname;
 }
