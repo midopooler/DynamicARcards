@@ -164,7 +164,7 @@ public class login2 : MonoBehaviour
                 StatsJson = webRequest.downloadHandler.text;
                 LoadingCircle.SetActive(false); 
                 
-                   SceneManager.LoadScene("PlayARcard");
+                   SceneManager.LoadScene(0);
 //load scene 
             }
 

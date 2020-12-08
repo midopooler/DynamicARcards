@@ -352,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5937711466905280142}
-  - component: {fileID: 5937711466905280141}
+  - component: {fileID: 5673589432435379261}
   m_Layer: 0
   m_Name: APIloader
   m_TagString: Untagged
@@ -375,7 +375,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5937711466905280141
+--- !u!114 &5673589432435379261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -384,12 +384,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5937711466905280140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3b4c026c36f02b478f3fbc77959c2b8, type: 3}
+  m_Script: {fileID: 11500000, guid: bc4ed6eeaa6230b43a038c3e30bb6cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gitAPIurlMiles: https://raw.githubusercontent.com/dracielisawal/jsontest/master/statsJson
-  gitAPIurlPlayer2: 
-  gitAPIurlPlayer3: 
+  userID: 
   playerData: 
   FirstName: 
   LastName: 
@@ -397,12 +395,14 @@ MonoBehaviour:
   Goals: 0
   AvatarURL: 
   clubLogoURL: 
-  profilepic: {fileID: 0}
-  clubLogo: {fileID: 0}
-  playerNumber: {fileID: 0}
-  PlayerName: {fileID: 0}
-  GoalsScored: {fileID: 0}
-  place: {fileID: 0}
+  profilepic: {fileID: 5937711466633969576}
+  clubLogo: {fileID: 5937711468245715584}
+  HighlightVideo: {fileID: 0}
+  highvidplaya: {fileID: 0}
+  playerNumber: {fileID: 5937711468302311244}
+  PlayerName: {fileID: 5937711466618343253}
+  GoalsScored: {fileID: 5937711467362428294}
+  place: {fileID: 5937711466364427571}
   mainURL: 
 --- !u!1 &5937711467342178805
 GameObject:

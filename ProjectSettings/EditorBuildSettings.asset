@@ -128,13 +128,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/ADarkHorseMain/Scenes/testing.unity
     guid: 5217e09806acb814e945ca65e3b72781
-  - enabled: 1
+  - enabled: 0
     path: Assets/ADarkHorseMain/Scenes/openPlayerCard.unity
     guid: 6a8ddf61a75d8934aa8d79ae44d5a468
-  - enabled: 1
+  - enabled: 0
     path: Assets/ADarkHorseMain/Scenes/login.unity
     guid: c71de6c24ea91e046a556dc97886f30a
-  - enabled: 1
+  - enabled: 0
     path: Assets/ADarkHorseMain/Scenes/PlayARcard.unity
     guid: bb872291a4f03f844bd1fe0c446cd61c
   m_configObjects:
