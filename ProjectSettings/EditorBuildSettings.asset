@@ -75,9 +75,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ImageTracking/BasicImageTracking/BasicImageTracking.unity
     guid: e0b018a3c3b5cfd4c8e316706ec0a18c
   - enabled: 0
-    path: Assets/Scenes/ImageTracking/ImageTrackingWithMultiplePrefabs/ImageTrackingWithMultiplePrefabs.unity
-    guid: a1bf0e7b9cece455f81c1d2731ba76e7
-  - enabled: 0
     path: Assets/Scenes/InputSystem/InputSystem.unity
     guid: 3956525d2e8364c3bad0d962f5821708
   - enabled: 0
@@ -128,15 +125,21 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/ADarkHorseMain/Scenes/openPlayerCard.unity
     guid: 6a8ddf61a75d8934aa8d79ae44d5a468
+  - enabled: 0
+    path: Assets/ADarkHorseMain/Scenes/PlayARcard.unity
+    guid: bb872291a4f03f844bd1fe0c446cd61c
   - enabled: 1
     path: Assets/ADarkHorseMain/Scenes/login.unity
     guid: c71de6c24ea91e046a556dc97886f30a
   - enabled: 1
+    path: Assets/ADarkHorseMain/Scenes/NavigationScene.unity
+    guid: 698a2e6654237034fbfa3a978b201bee
+  - enabled: 1
+    path: Assets/ADarkHorseMain/Scenes/ImageTracking.unity
+    guid: a1bf0e7b9cece455f81c1d2731ba76e7
+  - enabled: 1
     path: Assets/ADarkHorseMain/Scenes/FeatheredPlanes.unity
     guid: 8252358a1e2ba7549a94df43aacec984
-  - enabled: 0
-    path: Assets/ADarkHorseMain/Scenes/PlayARcard.unity
-    guid: bb872291a4f03f844bd1fe0c446cd61c
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: f8ce26fe3bc69499b9be4b2378e97a94,
       type: 2}
