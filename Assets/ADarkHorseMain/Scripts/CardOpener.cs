@@ -17,7 +17,7 @@ public class CardOpener : MonoBehaviour
     void Update()
     {  
         if(playerCard.activeSelf == true)
-        playerCard.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position + new Vector3(0, 1.5f, 0));
+        playerCard.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position + new Vector3(0, 1f, 0));
     
         if (Input.GetMouseButtonDown(0)) // left click or touch, works for both 
         {
