@@ -9,7 +9,7 @@ public class CardOpener : MonoBehaviour
     public string playerID;
     void Start()
     {
-        playerCard = this.gameObject.GetComponentInChildren<LoadAPItoCard>().gameObject;
+        playerCard = this.gameObject.GetComponentInChildren<TableTopCard>().gameObject;
       //  playerCard.SetActive(false);
     }
 
