@@ -180,7 +180,7 @@ MonoBehaviour:
     imagePrefab: {fileID: 3279860958548870494, guid: 2584331523bd14e8898965d93034efdb,
       type: 3}
   - imageGuid: 05bfcfc5-622e-4fc3-a9ba-aee7a909aa49
-    imagePrefab: {fileID: 1586781714435657425, guid: e140bb73b1e288c4f8d02f8d2e9dcf3b,
+    imagePrefab: {fileID: 3856669136119789426, guid: f9fb17327c5e60841b4b6d659e6e3b1b,
       type: 3}
   m_ImageLibrary: {fileID: 11400000, guid: c86e375d7e7430442a1104e88fa21f21, type: 2}
 --- !u!114 &264295717
@@ -779,6 +779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BackButtonManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225625820226493293, guid: 4ee22c1f54b174122b6a766fe09e0de8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3475649454728415072, guid: 4ee22c1f54b174122b6a766fe09e0de8,
         type: 3}
