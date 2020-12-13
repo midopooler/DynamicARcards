@@ -376,6 +376,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvastest
       objectReference: {fileID: 0}
+    - target: {fileID: 356176093570149045, guid: 27e3449e5f423e245b84af07ed9d4ad1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 356176093570149048, guid: 27e3449e5f423e245b84af07ed9d4ad1,
         type: 3}
       propertyPath: m_RenderMode
