@@ -1,21 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CardOpener : MonoBehaviour
 {
     public GameObject playerCard;
+    public TextMeshProUGUI namePlate;
     GameObject selectedPlayer;
     public string playerID;
     void Start()
     {
         playerCard = this.gameObject.GetComponentInChildren<TableTopCard>().gameObject;
-      //  playerCard.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
-    {  
+    {
+        namePlate.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position + new Vector3(0, 0.5f, 0));
         if(playerCard.activeSelf == true)
         playerCard.transform.position = Camera.main.WorldToScreenPoint(this.gameObject.GetComponent<Transform>().position + new Vector3(0, 1f, 0));
     

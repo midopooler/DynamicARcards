@@ -137,6 +137,7 @@ public class TableTopCard : MonoBehaviour
             Texture2D myTexture1 = ((DownloadHandlerTexture)www.downloadHandler).texture;
             profilepic.sprite = Sprite.Create(myTexture1, new Rect(0, 0, myTexture1.width, myTexture1.height), Vector2.one / 2);
             profilepic.color = new Color(profilepic.color.r, profilepic.color.g, profilepic.color.b, 100);
+            this.gameObject.SetActive(false);
 
             //VideoPlayerBelow
            
