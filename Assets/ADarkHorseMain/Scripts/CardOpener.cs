@@ -8,10 +8,16 @@ public class CardOpener : MonoBehaviour
     public GameObject playerCard;
     public TextMeshProUGUI namePlate;
     GameObject selectedPlayer;
+    TableTopCard stats;
     public string playerID;
     void Start()
     {
-        playerCard = this.gameObject.GetComponentInChildren<TableTopCard>().gameObject;
+        //playerCard = this.gameObject.GetComponentInChildren<TableTopCard>().gameObject;
+        stats = this.GetComponent<TableTopCard>();
+        if(stats.FirstName + stats.LastName != null)
+        {
+            namePlate.text = stats.FirstName + stats.LastName;
+        }
         
     }
 
@@ -35,10 +41,12 @@ public class CardOpener : MonoBehaviour
                     {
                         
                         playerCard.SetActive(true);
+                        namePlate.gameObject.SetActive(false);
                     }
                     else
                     {
                         playerCard.SetActive(false);
+                        namePlate.gameObject.SetActive(true);
                         
                     }
                 }

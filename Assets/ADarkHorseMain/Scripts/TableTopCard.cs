@@ -27,16 +27,20 @@ public class TableTopCard : MonoBehaviour
     public TextMeshProUGUI playerNumber;
     public TextMeshProUGUI PlayerName;
     public TextMeshProUGUI GoalsScored;
-    public TextMeshProUGUI place;
+    public TextMeshProUGUI place; 
 
     public string mainURL;
 
     public static string VideoURL = "https://darkhorse-static-data.s3-us-west-2.amazonaws.com/g4bwu8kgo1cjx1_videoplayback.mp4";
+
+    public GameObject PlayerCard;
+    public CardOpener namePlate;
     
   
 
     void Start()
     {
+        PlayerCard.SetActive(false);
         mainURL = "https://api.thedarkhorse.io/api/users/" + userID;
         
         LoadAPI();
@@ -70,6 +74,7 @@ public class TableTopCard : MonoBehaviour
           
             FirstName = data.firstname;
             LastName = data.lastname;
+            namePlate.namePlate.text = FirstName +" "+ LastName;
             Debug.Log(data.firstname + data.lastname);
             Number = data.specifics.number;
             Goals = data.specifics.goals;
@@ -137,7 +142,7 @@ public class TableTopCard : MonoBehaviour
             Texture2D myTexture1 = ((DownloadHandlerTexture)www.downloadHandler).texture;
             profilepic.sprite = Sprite.Create(myTexture1, new Rect(0, 0, myTexture1.width, myTexture1.height), Vector2.one / 2);
             profilepic.color = new Color(profilepic.color.r, profilepic.color.g, profilepic.color.b, 100);
-            this.gameObject.SetActive(false);
+            
 
             //VideoPlayerBelow
            
