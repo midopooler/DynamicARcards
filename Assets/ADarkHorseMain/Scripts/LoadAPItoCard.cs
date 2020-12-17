@@ -38,7 +38,7 @@ public class LoadAPItoCard : MonoBehaviour
 
     public string mainURL;
 
-    public static string VideoURL = "https://darkhorse-static-data.s3-us-west-2.amazonaws.com/g4bwu8kgo1cjx1_videoplayback.mp4";
+    public static string VideoURL; //= "https://darkhorse-static-data.s3-us-west-2.amazonaws.com/g4bwu8kgo1cjx1_videoplayback.mp4";
     
   
 
@@ -98,7 +98,7 @@ public class LoadAPItoCard : MonoBehaviour
             sprints.text = "Sprints per game : " + sprint.ToString();
             playerNumber.text = "#"+data.specifics.number.ToString();
             clubLogoURL = data.specifics.club.logo;
-           // VideoURL = data.specifics.matchHighlight[0];
+            VideoURL = data.specifics.matchHighlight[0];
             Debug.Log(clubLogoURL);
 
 
@@ -146,6 +146,10 @@ public class LoadAPItoCard : MonoBehaviour
             //VideoPlayerBelow
            
               var vp = HighlightVideo.gameObject.GetComponent<VideoPlayer>();
+            if(VideoURL != null)
+            {
+
+            
              vp.url = VideoURL;
             Debug.Log(VideoURL);
 
@@ -156,6 +160,7 @@ public class LoadAPItoCard : MonoBehaviour
 
         vp.Play();
         }
+    }
     }
 }
 
