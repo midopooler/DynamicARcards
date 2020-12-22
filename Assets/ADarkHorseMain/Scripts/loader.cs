@@ -22,4 +22,8 @@ public class loader : MonoBehaviour
     {
         SceneManager.LoadScene("ImageTracking");
     }
+    public void LoadNavigationScene()
+    {
+        SceneManager.LoadScene("NavigationScene");
+    }
 }
