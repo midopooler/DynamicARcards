@@ -291,6 +291,15 @@ MonoBehaviour:
   - imageGuid: 6c166b4a-e343-4de0-bde3-0fa4edbfb3d8
     imagePrefab: {fileID: 2027130963081741318, guid: ca4c8b7cf20432d448f9a2ca7007f562,
       type: 3}
+  - imageGuid: 86f17790-2c52-4135-bb37-3af6f70eb181
+    imagePrefab: {fileID: 2027130963081741318, guid: c804c27809976c9458301a43ee1cdac7,
+      type: 3}
+  - imageGuid: 3c382c6b-d3da-45c1-9482-73310c997df1
+    imagePrefab: {fileID: 2027130963081741318, guid: 4718f74b6a36e7c429f216704598efdd,
+      type: 3}
+  - imageGuid: 3da0131c-3e0d-4d54-85a1-ccba65f36d4d
+    imagePrefab: {fileID: 2027130963081741318, guid: 897c47d9e0a96e3499ebb5f00e384379,
+      type: 3}
   m_ImageLibrary: {fileID: 11400000, guid: c86e375d7e7430442a1104e88fa21f21, type: 2}
 --- !u!114 &264295717
 MonoBehaviour:
