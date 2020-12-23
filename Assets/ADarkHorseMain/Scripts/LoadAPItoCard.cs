@@ -146,13 +146,15 @@ public class LoadAPItoCard : MonoBehaviour
             //VideoPlayerBelow
            
               var vp = HighlightVideo.gameObject.GetComponent<VideoPlayer>();
-            if(VideoURL != null)
+            if (VideoURL == null)
             {
-
+                Debug.Log("video null");
+            }
+            else
+            {
+                vp.url = VideoURL;
+                Debug.Log(VideoURL);
             
-             vp.url = VideoURL;
-            Debug.Log(VideoURL);
-
         vp.isLooping = true;
             vp.renderMode = VideoRenderMode.RenderTexture;
           //vp.targetTexture = HighlightVideo.texture;
