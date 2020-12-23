@@ -98,7 +98,10 @@ public class LoadAPItoCard : MonoBehaviour
             sprints.text = "Sprints per game : " + sprint.ToString();
             playerNumber.text = "#"+data.specifics.number.ToString();
             clubLogoURL = data.specifics.club.logo;
-            VideoURL = data.specifics.matchHighlight[0];
+            if (data.specifics.matchHighlight.Count != 0)
+            {
+                VideoURL = data.specifics.matchHighlight[0];
+            }
             Debug.Log(clubLogoURL);
 
 
