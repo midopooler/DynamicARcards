@@ -221,7 +221,7 @@ MonoBehaviour:
   - imageGuid: 3da0131c-3e0d-4d54-85a1-ccba65f36d4d
     imagePrefab: {fileID: 2027130963081741318, guid: 01ed5f09986a91942ae519a0b2cbd5c2,
       type: 3}
-  m_ImageLibrary: {fileID: 11400000, guid: c86e375d7e7430442a1104e88fa21f21, type: 2}
+  m_ImageLibrary: {fileID: 11400000, guid: 899d213048eac704ebcb6d910ce6d051, type: 2}
 --- !u!114 &264295717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 11400000, guid: c86e375d7e7430442a1104e88fa21f21,
+  m_SerializedLibrary: {fileID: 11400000, guid: 899d213048eac704ebcb6d910ce6d051,
     type: 2}
   m_MaxNumberOfMovingImages: 1
   m_TrackedImagePrefab: {fileID: 0}
