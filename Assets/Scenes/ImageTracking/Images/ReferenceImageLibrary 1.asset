@@ -59,12 +59,12 @@ MonoBehaviour:
       m_GuidLow: 5133835687970727645
       m_GuidHigh: 10589778930403388819
     m_SerializedTextureGuid:
-      m_GuidLow: 11291841864985468686
-      m_GuidHigh: 3744427141384353561
+      m_GuidLow: 969405256618550174
+      m_GuidHigh: 1528737233586176696
     m_Size: {x: 0.1, y: 0.042982455}
     m_SpecifySize: 1
     m_Name: Fabian
-    m_Texture: {fileID: 2800000, guid: 7657df0eae599cb419b78b71a5e0f633, type: 3}
+    m_Texture: {fileID: 2800000, guid: dc25239e04f10d74b842d1126a2a3715, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 5660916617172501243
       m_GuidHigh: 2664039043045599676
