@@ -102,6 +102,10 @@ public class LoadAPItoCard : MonoBehaviour
             {
                 VideoURL = data.specifics.matchHighlight[0];
             }
+else
+            {
+                VideoURL = "https://darkhorse-ar-card.s3.us-east-2.amazonaws.com/WhatsApp+Video+2020-12-29+at+2.10.34+PM.mp4";
+            }
             Debug.Log(clubLogoURL);
 
 
