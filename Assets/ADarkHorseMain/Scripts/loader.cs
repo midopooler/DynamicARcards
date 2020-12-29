@@ -10,6 +10,10 @@ public class loader : MonoBehaviour
     {
         Application.OpenURL("https://www.thedarkhorse.io/signup");
     }
+    public void OpenDarkhorse()
+    {
+        Application.OpenURL("https://www.thedarkhorse.io/");
+    }
     public void LoadLogin()
     {
         SceneManager.LoadScene("login");
