@@ -135,3 +135,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: miles
     m_Texture: {fileID: 2800000, guid: 4581363380a50a54aaecc00e1f59b06c, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5255936223264754202
+      m_GuidHigh: 7011930837899378603
+    m_SerializedTextureGuid:
+      m_GuidLow: 6000024880148070789
+      m_GuidHigh: 12131499834825842523
+    m_Size: {x: 0.1, y: 0.05510949}
+    m_SpecifySize: 1
+    m_Name: charlete
+    m_Texture: {fileID: 2800000, guid: c8bb41855ed653445b1f8107d3be5ba8, type: 3}
