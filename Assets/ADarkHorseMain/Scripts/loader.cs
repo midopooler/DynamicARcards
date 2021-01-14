@@ -30,4 +30,8 @@ public class loader : MonoBehaviour
     {
         SceneManager.LoadScene("NavigationScene");
     }
+    public void LoadintegratedScene()
+    {
+        SceneManager.LoadScene("integrated");
+    }
 }

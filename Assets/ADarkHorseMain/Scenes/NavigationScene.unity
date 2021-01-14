@@ -328,7 +328,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1199094492}
         m_TargetAssemblyTypeName: loader, Assembly-CSharp
-        m_MethodName: LoadPlayAR
+        m_MethodName: LoadintegratedScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
