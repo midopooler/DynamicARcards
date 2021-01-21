@@ -32,6 +32,6 @@ public class loader : MonoBehaviour
     }
     public void LoadintegratedScene()
     {
-        SceneManager.LoadScene("integrated");
+        SceneManager.LoadScene("QRCode4ARFoundationCamera");
     }
 }
